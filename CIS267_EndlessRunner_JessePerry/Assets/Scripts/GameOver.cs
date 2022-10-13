@@ -25,4 +25,10 @@ public class GameOver : MonoBehaviour
         gameOverPanel.SetActive(false);
         Time.timeScale = 1;
     }
+
+    public void exitGame()
+    {
+        Application.Quit();
+        //Debug.Log("RAHHHHH");
+    }
 }

@@ -26,6 +26,7 @@ public class Obstacle : MonoBehaviour
 
         else if(collision.tag == "Player")
         {
+            Destroy(this.gameObject);
             amtHit++;
             //Debug.Log(amtHit);
         }
