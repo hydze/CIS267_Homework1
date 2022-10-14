@@ -25,7 +25,7 @@ public class Collectible : MonoBehaviour
         {
             Destroy(this.gameObject);
             amtCollected++;
-            Debug.Log(amtCollected);
+            //Debug.Log(amtCollected);
         }
     }
 }

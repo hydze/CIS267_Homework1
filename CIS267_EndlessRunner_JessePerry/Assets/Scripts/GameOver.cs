@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     public GameObject gameOverPanel;
+    public static bool isActive;
 
 
     // Update is called once per frame
@@ -14,9 +15,11 @@ public class GameOver : MonoBehaviour
         if(Obstacle.amtHit == 3)
         {
             gameOverPanel.SetActive(true);
+            isActive = true;
             Obstacle.amtHit = 0;
             Time.timeScale = 0;
         }
+        else isActive = false;
     }
 
     public void restart()
