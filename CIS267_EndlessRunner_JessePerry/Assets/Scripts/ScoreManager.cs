@@ -10,10 +10,15 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.FindGameObjectsWithTag("Player") != null)
+        if (HeartControl.health != 0)
         {
             scoreText.text = Collectible.amtCollected.ToString();
         }
+    }
 
+    public void resetScore()
+    {
+            scoreText.text = "0";
+            Collectible.amtCollected = 0;
     }
 }
