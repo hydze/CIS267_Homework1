@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Border
   - PlayerBorder
+  - TopBorder
   layers:
   - Default
   - TransparentFX

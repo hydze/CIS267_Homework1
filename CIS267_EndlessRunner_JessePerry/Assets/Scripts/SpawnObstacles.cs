@@ -9,13 +9,14 @@ public class SpawnObstacles : MonoBehaviour
     public float maxX;
     public float minX;
     public float Y;
-    public float timeBetweenSpawn;
+    private float timeBetweenSpawn;
     private float spawnTime;
 
     // Update is called once per frame
     void Update()
     {
-        if(Time.time > spawnTime)
+        timeBetweenSpawn = Random.Range(1, 8);
+        if (Time.time > spawnTime)
         {
             spawn();
             spawnTime = Time.time + timeBetweenSpawn;

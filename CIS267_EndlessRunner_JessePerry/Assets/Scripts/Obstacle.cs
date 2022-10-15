@@ -10,7 +10,7 @@ public class Obstacle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject ob2 = GameObject.FindGameObjectWithTag("Player");
+        //GameObject ob2 = GameObject.FindGameObjectWithTag("Player");
 
         GameObject player = GameObject.FindGameObjectWithTag("PlayerBorder");
 
