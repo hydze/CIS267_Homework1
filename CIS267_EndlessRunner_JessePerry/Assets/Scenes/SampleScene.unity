@@ -394,6 +394,7 @@ Transform:
   - {fileID: 1032428166}
   - {fileID: 1744264567}
   - {fileID: 837199077}
+  - {fileID: 1987233102}
   - {fileID: 1587788402}
   - {fileID: 300742956}
   m_Father: {fileID: 0}
@@ -460,7 +461,7 @@ Transform:
   - {fileID: 1889139704}
   - {fileID: 136138058}
   m_Father: {fileID: 253607288}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &339004721
 GameObject:
@@ -1376,7 +1377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b47fea9d132b74fbc728d4efd48c4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundSpeed: 0.5
+  backgroundSpeed: 0.6
   backgroundRenderer: {fileID: 755533317}
 --- !u!1 &837199076
 GameObject:
@@ -2016,7 +2017,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 253607288}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1587788403
 BoxCollider2D:
@@ -2442,6 +2443,56 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 254.57703}
   m_EdgeRadius: 0
+--- !u!1 &1987233100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1987233102}
+  - component: {fileID: 1987233101}
+  m_Layer: 0
+  m_Name: Heart Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1987233101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987233100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8cf27ee73fbf3d42b82d6264f2197cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heart: {fileID: 6080448070020994741, guid: a1bf1b7b8372afb4fa0ac781d1da9c6b, type: 3}
+  maxX: 3.5
+  minX: 3
+  maxY: 2.48
+  minY: -2.92
+  timeBetweenSpawn: 30
+--- !u!4 &1987233102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987233100}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 14.03, y: -0.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 253607288}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2008279754
 GameObject:
   m_ObjectHideFlags: 0

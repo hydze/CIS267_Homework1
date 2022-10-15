@@ -12,7 +12,7 @@ public class GameOver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Obstacle.amtHit == 3)
+        if(HeartControl.health == 0)
         {
             gameOverPanel.SetActive(true);
             isActive = true;

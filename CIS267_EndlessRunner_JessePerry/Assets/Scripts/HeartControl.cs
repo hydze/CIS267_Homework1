@@ -7,9 +7,11 @@ public class HeartControl : MonoBehaviour
     public GameObject heart1, heart2, heart3;
     public static int health;
 
+
     // Start is called before the first frame update
     void Start()
     {
+
         health = 3;
         heart1.gameObject.SetActive(true);
         heart2.gameObject.SetActive(true);
