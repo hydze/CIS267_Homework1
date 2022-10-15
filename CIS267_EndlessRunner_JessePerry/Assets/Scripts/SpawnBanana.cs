@@ -2,23 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnEagle : MonoBehaviour
+public class SpawnBanana : MonoBehaviour
 {
-    public GameObject obstacle;
+    public GameObject banana;
     public float maxX;
     public float minX;
     public float maxY;
     public float minY;
     private float timeBetweenSpawn;
-    private float spawnTime;
-    //private bool setGravity = false;
+    private float spawnTime = 10;
 
     // Update is called once per frame
     void Update()
     {
-        timeBetweenSpawn = Random.Range(1, 10);
-
-        if(Time.time > spawnTime)
+        timeBetweenSpawn = Random.Range(10, 30);
+        if (Time.time > spawnTime)
         {
             spawn();
             spawnTime = Time.time + timeBetweenSpawn;
@@ -30,6 +28,7 @@ public class SpawnEagle : MonoBehaviour
         float randomX = Random.Range(minX, maxX);
         float randomY = Random.Range(minY, maxY);
 
-        Instantiate(obstacle, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
+        Instantiate(banana, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
+
     }
 }
