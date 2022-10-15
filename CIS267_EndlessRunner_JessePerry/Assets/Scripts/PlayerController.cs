@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float movementSpeed;
-    private Rigidbody2D playerRigidBody;
+    private static Rigidbody2D playerRigidBody;
     private float inputHorizontal;
     public float jumpForce;
     private bool isGrounded;
+    public float timeBetweenSpawn;
+    public float spawnTime;
 
     void Start()
     {
@@ -51,6 +53,17 @@ public class PlayerController : MonoBehaviour
             playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, jumpForce);
             playerRigidBody.velocity = Vector2.up * jumpForce;
         }
+    }
+
+    public static void inverseGravity()
+    {
+        
+        if (Time.time > spawnTime)
+        {
+            playerRigidBody.gravityScale = -7f;
+            spawnTime = Time.time + timeBetweenSpawn;
+        }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D other)

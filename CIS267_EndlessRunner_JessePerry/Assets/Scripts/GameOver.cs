@@ -28,6 +28,7 @@ public class GameOver : MonoBehaviour
     {
         //isClicked = true;
         //ScoreManager.re
+        Collectible.amtCollected = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         gameOverPanel.SetActive(false);
         Time.timeScale = 1;

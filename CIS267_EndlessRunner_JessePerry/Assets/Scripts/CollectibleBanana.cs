@@ -10,6 +10,8 @@ public class CollectibleBanana : MonoBehaviour
     private float spawnTime;
     private static int changeDirectionDelay;
 
+
+    //PlayerController temp = new PlayerController();
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,7 @@ public class CollectibleBanana : MonoBehaviour
         else if (collision.tag == "Player")
         {
             Destroy(this.gameObject);
+            PlayerController.inverseGravity();  
         }
     }
 }
