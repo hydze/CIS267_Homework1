@@ -99,6 +99,25 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = true;
         }
+        if (other.gameObject.CompareTag("Border"))
+        {
+            if(HeartControl.health == 3)
+            {
+                HeartControl.health--;
+                HeartControl.health--;
+                HeartControl.health--;
+            }
+            if (HeartControl.health == 2)
+            {
+                HeartControl.health--;
+                HeartControl.health--;
+            }
+            if (HeartControl.health == 1)
+            {
+                HeartControl.health--;
+            }
+
+        }
     }
 
     private void OnCollisionExit2D(Collision2D other)
