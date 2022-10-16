@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,20 +10,29 @@ public class PlayerController : MonoBehaviour
     private float inputHorizontal;
     public float jumpForce;
     private bool isGrounded;
-    public float timeBetweenSpawn;
-    public float spawnTime;
+    private static bool isGravity;
+   // private static int gravityDelay;
 
     void Start()
     {
-        playerRigidBody = GetComponent<Rigidbody2D>();
-
+        transform.rotation = Quaternion.Euler(0, 0, 0);
         Time.timeScale = 1;
+        //gravityDelay = 7;
+
+        playerRigidBody = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
         movePlayerLateral();
         jump();
+
+       if (isGravity)
+        {
+            reverseJump();
+            flipPlayerGrav();
+            Invoke("revertGravity", 5);
+        }
     }
 
     private void movePlayerLateral()
@@ -55,15 +65,32 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void reverseJump()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, jumpForce);
+            playerRigidBody.velocity = Vector2.down * jumpForce;
+        }
+    }
+
     public static void inverseGravity()
     {
-        
-        if (Time.time > spawnTime)
-        {
-            playerRigidBody.gravityScale = -7f;
-            spawnTime = Time.time + timeBetweenSpawn;
-        }
-        
+        isGravity = true;
+        playerRigidBody.gravityScale = -7f;
+    }
+
+    private void flipPlayerGrav()
+    {
+        transform.rotation = Quaternion.Euler(180, 0, 0);
+    }
+
+    private void revertGravity()
+    {
+        isGravity = false;
+        playerRigidBody.gravityScale = 7f;
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+        //transform.rotation = new Quaternion().;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -80,6 +107,5 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = false;
         }
-
     }
 }
