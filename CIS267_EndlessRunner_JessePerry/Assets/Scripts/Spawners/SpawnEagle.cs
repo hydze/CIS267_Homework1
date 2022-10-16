@@ -18,7 +18,7 @@ public class SpawnEagle : MonoBehaviour
     {
         timeBetweenSpawn = Random.Range(1, 10);
 
-        if(Time.time > spawnTime)
+        if(Time.time > spawnTime && !SpawnObstacles.appleDelay)
         {
             spawn();
             spawnTime = Time.time + timeBetweenSpawn;
